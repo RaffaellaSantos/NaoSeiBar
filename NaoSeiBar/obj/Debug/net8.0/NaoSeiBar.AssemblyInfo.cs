@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NaoSeiBar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a67664310822d20f119547b72ab6b60727678901")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46afcbe4dc358a3b98bcd03e1f2141057875aeb9")]
 [assembly: System.Reflection.AssemblyProductAttribute("NaoSeiBar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NaoSeiBar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

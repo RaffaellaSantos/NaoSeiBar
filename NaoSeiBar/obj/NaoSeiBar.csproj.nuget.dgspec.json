@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NaoSeiBar\\NaoSeiBar\\NaoSeiBar.csproj": {}
+    "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NaoSeiBar\\NaoSeiBar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NaoSeiBar\\NaoSeiBar\\NaoSeiBar.csproj": {
+    "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NaoSeiBar\\NaoSeiBar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NaoSeiBar\\NaoSeiBar\\NaoSeiBar.csproj",
+        "projectUniqueName": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NaoSeiBar\\NaoSeiBar.csproj",
         "projectName": "NaoSeiBar",
-        "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NaoSeiBar\\NaoSeiBar\\NaoSeiBar.csproj",
+        "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NaoSeiBar\\NaoSeiBar.csproj",
         "packagesPath": "C:\\Users\\adraf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NaoSeiBar\\NaoSeiBar\\obj\\",
+        "outputPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NaoSeiBar\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
