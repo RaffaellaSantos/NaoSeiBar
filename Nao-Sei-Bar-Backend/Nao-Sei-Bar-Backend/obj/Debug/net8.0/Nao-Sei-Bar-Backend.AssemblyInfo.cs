@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Nao-Sei-Bar-Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4590742915e0efde046ee35ea854a895b6eff510")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24ecc66465eb01bda16f82eb900aee886f90043b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Nao-Sei-Bar-Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Nao-Sei-Bar-Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
