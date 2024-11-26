@@ -1,6 +1,0 @@
-@NaoSeiBar_HostAddress = http://localhost:5142
-
-GET {{NaoSeiBar_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
