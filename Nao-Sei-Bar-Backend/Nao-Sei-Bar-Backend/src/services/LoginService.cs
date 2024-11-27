@@ -1,4 +1,5 @@
-﻿using Nao_Sei_Bar_Backend.src.data.enums;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Nao_Sei_Bar_Backend.src.data.enums;
 using Nao_Sei_Bar_Backend.src.data.repository;
 using Nao_Sei_Bar_Backend.src.services.interfaces;
 using NaoSeiBar.src.data.entities;
@@ -31,13 +32,29 @@ namespace Nao_Sei_Bar_Backend.src.services
             return funcionario; // Retorna o funcionário encontrado
         }
 
-        public async Task<string> ObterPaginaAutorizada(Funcao funcao)
+        public string ObterPaginaAutorizada(Funcao funcao)
         {
             switch (funcao)
             {
                 case Funcao.Atendente:
                     return "/pagina-atendente";
             }
+            return null;
+        }
+
+        Task<bool> ILogin.ObterFuncionarioPorCpf(string cpf)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<bool> ILogin.ValidarLoginAsync(string cpf, string senha)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<string> ILogin.ObterPaginaAutorizada(Funcao funcao)
+        {
+            throw new NotImplementedException();
         }
     }
 }
