@@ -6,14 +6,9 @@ using NaoSeiBar.src.data.entities;
 
 namespace Nao_Sei_Bar_Backend.src.services
 {
-    public class LoginService : ILogin
+    public class LoginService(IFuncionarioRepository funcionarioRepository) : ILogin
     {
-        private readonly IFuncionarioRepository _funcionarioRepository;
-
-        public LoginService(IFuncionarioRepository funcionarioRepository)
-        {
-            _funcionarioRepository = funcionarioRepository;
-        }
+        private readonly IFuncionarioRepository _funcionarioRepository = funcionarioRepository;
 
         public async Task<bool> ValidarLoginAsync(string cpf, string senha)
         {

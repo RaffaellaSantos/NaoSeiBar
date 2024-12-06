@@ -1,0 +1,20 @@
+﻿using Nao_Sei_Bar_Backend.src.data.enums;
+using NaoSeiBar.src.data.entities;
+
+namespace NSB_API.data.dtos
+{
+    public class ProdutoDto
+    {
+        private int id { get; }
+        private string nome { get; set; }
+        private Tipo tipo { get; set; }
+        private double valorCompra { get; set; }
+        private double valorVenda { get; set; }
+        private string marca { get; set; }
+        private int quantidade { get; set; }
+        private DateTime validade { get; set; }
+        private Lote lote { get; set; }
+        private Fornecedor forncedor { get; set; }
+        private DateTime dataEntrada { get; set; }
+    }
+}
