@@ -1,2 +1,6 @@
 .vs
-/NSB-API/mysql/mysql.sock
+**/mysql/mysql.sock
+**/mysql/auto.cnf
+**/mysql/binlog.index
+**/mysql/ib_buffer_pool
+

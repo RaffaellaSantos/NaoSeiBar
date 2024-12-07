@@ -1,31 +1,31 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿//using Microsoft.AspNetCore.Http;
+//using Microsoft.AspNetCore.Mvc;
 
-namespace NSB_API.Controllers
-{
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AtendenteController : Controller
-    {
-        [HttpPost("CadastrarCliente")]
+//namespace NSB_API.Controllers
+//{
+//    [Route("api/[controller]")]
+//    [ApiController]
+//    public class AtendenteController : Controller
+//    {
+//        [HttpPost("CadastrarCliente")]
 
-        [HttpGet("ListarClientes")]
+//        [HttpGet("ListarClientes")]
 
-        [HttpGet("ListarCliente/[id]")]
+//        [HttpGet("ListarCliente/[id]")]
 
-        [HttpPut("AlterarCliente")]
+//        [HttpPut("AlterarCliente")]
 
-        [HttpPost("Comanda")]
+//        [HttpPost("Comanda")]
 
-        [HttpGet("ListarComandas")]
+//        [HttpGet("ListarComandas")]
 
-        [HttpGet("ListarComanda/[id]")]
+//        [HttpGet("ListarComanda/[id]")]
 
-        [HttpPut("AlterarComanda")]
-        //Dentro deste controller vai para outro controller que será para adicionar, deletar produto
+//        [HttpPut("AlterarComanda")]
+//        //Dentro deste controller vai para outro controller que será para adicionar, deletar produto
 
-        [HttpDelete("CancelarComanda/[id]")]
+//        [HttpDelete("CancelarComanda/[id]")]
 
 
-    }
-}
+//    }
+//}

@@ -1,18 +1,20 @@
 ﻿using Nao_Sei_Bar_Backend.src.data.entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace NaoSeiBar.src.data.entities
 {
     public class Fornecedor
     {
-        private string cnpj { get; set; }
-        private string nome { get; set; }
-        private Produto produto { get; set; }
-        private string banco { get; set; }
-        private string numeroConta { get; set; }
-        private string agencia { get; set; }
-        private bool statusFornecedor { get; set; }
-        private DateTime dataContratacao { get; set; }
-        private string telefone { get; set; }
-        private string email { get; set; }
+        [Key]
+        public string Cnpj { get; set; }
+        public string Nome { get; set; }
+        public ICollection<Produto> Produtos { get; set; }
+        public string Banco { get; set; }
+        public string NumeroConta { get; set; }
+        public string Agencia { get; set; }
+        public bool StatusFornecedor { get; set; }
+        public DateTime DataContratacao { get; set; }
+        public string Telefone { get; set; }
+        public string Email { get; set; }
     }
 }

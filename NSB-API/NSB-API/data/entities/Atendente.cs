@@ -1,9 +1,13 @@
-﻿using Nao_Sei_Bar_Backend.src.data.enums;
+﻿using Microsoft.EntityFrameworkCore;
+using Nao_Sei_Bar_Backend.src.data.enums;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace NaoSeiBar.src.data.entities
 {
     public class Atendente : IFuncionario
     {
+        [Key]
         public string Cpf { get; set; }
         public string Nome { get; set; }
         public DateTime DataNascimento { get; set; }

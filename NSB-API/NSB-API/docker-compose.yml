@@ -1,0 +1,12 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: nsb_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "n5b@!"
+      MYSQL_DATABASE: "nsb"
+      MYSQL_USER: "nsb"
+      MYSQL_PASSWORD: "n58!!"
+    volumes:
+      - ./mysql:/var/lib/mysql

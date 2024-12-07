@@ -1,20 +1,24 @@
 ﻿using Nao_Sei_Bar_Backend.src.data.enums;
 using NaoSeiBar.src.data.entities;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace Nao_Sei_Bar_Backend.src.data.entities
 {
     public class Produto
     {
-        private int id { get; }
-        private string nome { get; set; }
-        private Tipo tipo { get; set; }
-        private double valorCompra { get; set; }
-        private double valorVenda { get; set; }
-        private string marca { get; set; }
-        private int quantidade { get; set; }
-        private DateTime validade { get; set; }
-        private Lote lote { get; set; }
-        private Fornecedor forncedor { get; set; }
-        private DateTime dataEntrada { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set;  }
+        public string Nome { get; set; }
+        public Tipo Tipo { get; set; }
+        public double ValorCompra { get; set; }
+        public double ValorVenda { get; set; }
+        public string Marca { get; set; }
+        public int Quantidade { get; set; }
+        public DateTime Validade { get; set; }
+        public Lote Lote { get; set; }
+        public Fornecedor Fornecedor { get; set; }
+        public DateTime DataEntrada { get; set; }
     }
 }

@@ -1,20 +1,20 @@
-
-
 using Microsoft.EntityFrameworkCore;
 using Nao_Sei_Bar_Backend.src.data;
 using Nao_Sei_Bar_Backend.src.data.repository;
 using Nao_Sei_Bar_Backend.src.services;
 using Nao_Sei_Bar_Backend.src.services.interfaces;
+using NSB_API.services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Registre o AppDbContext
+// Configurando o DbContext para MySQL
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+        new MySqlServerVersion(new Version(8, 0, 29))));
 
 
 // Add services to the container.
-
+builder.Services.AddScoped<GestorService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

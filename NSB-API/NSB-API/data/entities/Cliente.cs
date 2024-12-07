@@ -1,10 +1,13 @@
-﻿namespace NaoSeiBar.src.data.entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace NaoSeiBar.src.data.entities
 {
     public class Cliente
     {
-        private string cpf { get; set; }
-        private string nome { get; set; }
-        private string telefone { get; set; }
-        private DateTime dataNascimento { get; set; }
+        [Key]
+        public string cpf { get; set; }
+        public string nome { get; set; }
+        public string telefone { get; set; }
+        public DateTime dataNascimento { get; set; }
     }
 }

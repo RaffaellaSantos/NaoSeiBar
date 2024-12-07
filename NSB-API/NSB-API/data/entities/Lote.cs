@@ -1,11 +1,16 @@
-﻿namespace NaoSeiBar.src.data.entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace NaoSeiBar.src.data.entities
 {
     public class Lote
     {
-        private int id;
-        private DateTime dataFornecimento { get; set; }
-        private string descricao { get; set; }
-        private double valorTotal { get; set; }
-        private Fornecedor forncecedor { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id {  get; set; }
+        public DateTime DataFornecimento { get; set; }
+        public string Descricao { get; set; }
+        public double ValorTotal { get; set; }
+        public Fornecedor Fornecedor { get; set; }
     }
 }
