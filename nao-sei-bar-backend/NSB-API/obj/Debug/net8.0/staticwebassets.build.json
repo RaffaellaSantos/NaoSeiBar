@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "4lGKsmcHvtEYxxNMDrKbJdkbzMCrFLFTFPkIihITZuw=",
+  "Hash": "DKdWstyjP/+zPHTiJgQ/SvdhApNlBbRFyYu0CpZugvQ=",
   "Source": "NSB-API",
   "BasePath": "_content/NSB-API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

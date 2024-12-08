@@ -5,30 +5,289 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Login/login": {
+    "/api/Gestor/CadastrarProduto": {
       "post": {
         "tags": [
-          "Login"
+          "Gestor"
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/LoginDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginDto"
+                "type": "object",
+                "properties": {
+                  "Nome": {
+                    "type": "string"
+                  },
+                  "Tipo": {
+                    "$ref": "#/components/schemas/Tipo"
+                  },
+                  "ValorVenda": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Marca": {
+                    "type": "string"
+                  },
+                  "Quantidade": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Validade": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "encoding": {
+                "Nome": {
+                  "style": "form"
+                },
+                "Tipo": {
+                  "style": "form"
+                },
+                "ValorVenda": {
+                  "style": "form"
+                },
+                "Marca": {
+                  "style": "form"
+                },
+                "Quantidade": {
+                  "style": "form"
+                },
+                "Validade": {
+                  "style": "form"
+                }
               }
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProdutoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProdutoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProdutoDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Gestor/ListarProduto/{id}": {
+      "get": {
+        "tags": [
+          "Gestor"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProdutoDtoPaginatedResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProdutoDtoPaginatedResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProdutoDtoPaginatedResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Gestor/ListarProdutos": {
+      "get": {
+        "tags": [
+          "Gestor"
+        ],
+        "parameters": [
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "filtroTipo",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Tipo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProdutoResponseDtoPaginatedResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProdutoResponseDtoPaginatedResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProdutoResponseDtoPaginatedResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Gestor/AlterarProduto/{id}": {
+      "put": {
+        "tags": [
+          "Gestor"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Nome": {
+                    "type": "string"
+                  },
+                  "Tipo": {
+                    "$ref": "#/components/schemas/Tipo"
+                  },
+                  "ValorVenda": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Marca": {
+                    "type": "string"
+                  },
+                  "Quantidade": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Validade": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "encoding": {
+                "Nome": {
+                  "style": "form"
+                },
+                "Tipo": {
+                  "style": "form"
+                },
+                "ValorVenda": {
+                  "style": "form"
+                },
+                "Marca": {
+                  "style": "form"
+                },
+                "Quantidade": {
+                  "style": "form"
+                },
+                "Validade": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProdutoResponseDtoPaginatedResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProdutoResponseDtoPaginatedResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProdutoResponseDtoPaginatedResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Gestor/DeletarProduto/{id}": {
+      "delete": {
+        "tags": [
+          "Gestor"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -36,41 +295,177 @@
         }
       }
     },
-    "/WeatherForecast": {
-      "get": {
+    "/api/Login/login": {
+      "post": {
         "tags": [
-          "WeatherForecast"
+          "Login"
         ],
-        "operationId": "GetWeatherForecast",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Cpf": {
+                    "type": "string"
+                  },
+                  "Senha": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Cpf": {
+                  "style": "form"
+                },
+                "Senha": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "type": "boolean"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "type": "boolean"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "type": "boolean"
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/CadastrarFuncionario": {
+      "post": {
+        "tags": [
+          "Rh"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Cpf": {
+                    "type": "string"
+                  },
+                  "Nome": {
+                    "type": "string"
+                  },
+                  "DataNascimento": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Funcao": {
+                    "$ref": "#/components/schemas/Funcao"
+                  },
+                  "Salario": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Status": {
+                    "type": "boolean"
+                  },
+                  "DataContratacao": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "CargaHorario": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Telefone": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Cpf": {
+                  "style": "form"
+                },
+                "Nome": {
+                  "style": "form"
+                },
+                "DataNascimento": {
+                  "style": "form"
+                },
+                "Funcao": {
+                  "style": "form"
+                },
+                "Salario": {
+                  "style": "form"
+                },
+                "Status": {
+                  "style": "form"
+                },
+                "DataContratacao": {
+                  "style": "form"
+                },
+                "CargaHorario": {
+                  "style": "form"
+                },
+                "Telefone": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FuncionarioDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FuncionarioDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FuncionarioDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ListarFuncionarioPorCpf": {
+      "get": {
+        "tags": [
+          "Rh"
+        ],
+        "parameters": [
+          {
+            "name": "cpf",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -78,42 +473,307 @@
   },
   "components": {
     "schemas": {
-      "LoginDto": {
+      "Fornecedor": {
         "type": "object",
         "properties": {
-          "cpf": {
+          "cnpj": {
             "type": "string",
             "nullable": true
           },
-          "senha": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "produtos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Produto"
+            },
+            "nullable": true
+          },
+          "banco": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroConta": {
+            "type": "string",
+            "nullable": true
+          },
+          "agencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusFornecedor": {
+            "type": "boolean"
+          },
+          "dataContratacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
             "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "WeatherForecast": {
+      "Funcao": {
+        "enum": [
+          "Atendente",
+          "RH",
+          "Financeiro",
+          "GestorDeEstoque"
+        ],
+        "type": "string"
+      },
+      "FuncionarioDto": {
         "type": "object",
         "properties": {
-          "date": {
+          "cpf": {
             "type": "string",
-            "format": "date"
+            "nullable": true
           },
-          "temperatureC": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataNascimento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "funcao": {
+            "$ref": "#/components/schemas/Funcao"
+          },
+          "salario": {
+            "type": "number",
+            "format": "double"
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "dataContratacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "cargaHorario": {
             "type": "integer",
             "format": "int32"
           },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "summary": {
+          "telefone": {
             "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
+      },
+      "Lote": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataFornecimento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "valorTotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "fornecedor": {
+            "$ref": "#/components/schemas/Fornecedor"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Produto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipo": {
+            "$ref": "#/components/schemas/Tipo"
+          },
+          "valorCompra": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorVenda": {
+            "type": "number",
+            "format": "double"
+          },
+          "marca": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantidade": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "validade": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lote": {
+            "$ref": "#/components/schemas/Lote"
+          },
+          "dataEntrada": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProdutoDto": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipo": {
+            "$ref": "#/components/schemas/Tipo"
+          },
+          "valorVenda": {
+            "type": "number",
+            "format": "double"
+          },
+          "marca": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantidade": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "validade": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProdutoDtoPaginatedResponse": {
+        "type": "object",
+        "properties": {
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "currentPage": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProdutoDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProdutoResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipo": {
+            "$ref": "#/components/schemas/Tipo"
+          },
+          "valorCompra": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorVenda": {
+            "type": "number",
+            "format": "double"
+          },
+          "marca": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantidade": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "validade": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lote": {
+            "$ref": "#/components/schemas/Lote"
+          },
+          "dataEntrada": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProdutoResponseDtoPaginatedResponse": {
+        "type": "object",
+        "properties": {
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "currentPage": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProdutoResponseDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Tipo": {
+        "enum": [
+          "Cerveja",
+          "Cachaca",
+          "Vinho",
+          "Vodka",
+          "Gin",
+          "Rum",
+          "Whisky",
+          "NaoAlcoolico"
+        ],
+        "type": "string"
       }
     }
   }

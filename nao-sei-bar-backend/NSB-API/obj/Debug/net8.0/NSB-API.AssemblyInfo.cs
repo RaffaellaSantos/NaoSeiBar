@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NSB-API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2aee890f64d6806f395ccc55d38fe4eb48903177")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7432acad6a5d16e658d1ecb7c9be4ca604561e0b")]
 [assembly: System.Reflection.AssemblyProductAttribute("NSB-API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NSB-API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
