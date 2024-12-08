@@ -147,21 +147,33 @@ namespace NSB_API.services
             };
         }
 
-        public async Task<Produto> AlterarProduto(int id, ProdutoDto produtoDto)
+        public async Task<ProdutoResponseDto> AlterarProduto(int id, ProdutoAlterDto produtoDto)
         {
             var produto = await _context.Produtos.FindAsync(id);
             if (produto == null) return null;
 
-            produto.Nome = produtoDto.Nome ?? produto.Nome;
-            produto.Tipo = produtoDto.Tipo;
-            produto.ValorVenda = produtoDto.ValorVenda > 0 ? produtoDto.ValorVenda : produto.ValorVenda;
-            produto.Marca = produtoDto.Marca ?? produto.Marca;
-            produto.Quantidade = produtoDto.Quantidade > 0 ? produtoDto.Quantidade : produto.Quantidade;
-            produto.Validade = produtoDto.Validade;
+            if (!string.IsNullOrEmpty(produtoDto.Nome)) produto.Nome = produtoDto.Nome;
+            if (produtoDto.Tipo.HasValue) produto.Tipo = produtoDto.Tipo.Value;
+            if (produtoDto.ValorVenda.HasValue && produtoDto.ValorVenda > 0) produto.ValorVenda = produtoDto.ValorVenda.Value;
+            if (!string.IsNullOrEmpty(produtoDto.Marca)) produto.Marca = produtoDto.Marca;
+            if (produtoDto.Quantidade.HasValue && produtoDto.Quantidade > 0) produto.Quantidade = produtoDto.Quantidade.Value;
+            if (produtoDto.Validade.HasValue) produto.Validade = produtoDto.Validade.Value;
 
             await _context.SaveChangesAsync();
 
-            return produto;
+            return new ProdutoResponseDto
+            {
+                Id = produto.Id,
+                Nome = produto.Nome,
+                Tipo = produto.Tipo,
+                ValorCompra = produto.ValorCompra,
+                ValorVenda = produto.ValorVenda,
+                Marca = produto.Marca,
+                Quantidade = produto.Quantidade,
+                Validade = produto.Validade,
+                Lote = produto.Lote,
+                DataEntrada = produto.DataEntrada
+            };
         }
 
         public async Task<bool> DeletarProduto(int id)

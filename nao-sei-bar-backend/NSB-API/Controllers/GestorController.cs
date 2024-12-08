@@ -29,7 +29,8 @@ namespace NSB_API.Controllers
             return await _gestorService.CadastrarProduto(produtoDto);
         }
 
-        [HttpGet("ListarProduto/{id}")]        
+        [HttpGet("ListarProduto/{id}")]
+        [ProducesResponseType(typeof(PaginatedResponse<ProdutoDto>), 200)]
         public async Task<IActionResult> ListarProduto(int id)
         {
             var produto = await _gestorService.ListarProdutoPorId(id);
@@ -50,7 +51,8 @@ namespace NSB_API.Controllers
         }
 
         [HttpPut("AlterarProduto/{id}")]
-        public async Task<IActionResult> AlterarProduto(int id, [FromBody] ProdutoDto produtoDto)
+        [ProducesResponseType(typeof(PaginatedResponse<ProdutoResponseDto>), 200)]
+        public async Task<IActionResult> AlterarProduto(int id, [FromForm] ProdutoAlterDto produtoDto)
         {
             if (produtoDto == null)
             {
@@ -67,6 +69,7 @@ namespace NSB_API.Controllers
         }
 
         [HttpDelete("DeletarProduto/{id}")]
+        [ProducesResponseType(200)]
         public async Task<IActionResult> DeletarProduto(int id)
         {
             var sucesso = await _gestorService.DeletarProduto(id);
@@ -75,7 +78,7 @@ namespace NSB_API.Controllers
                 return NotFound("Produto não encontrado.");
             }
 
-            return NoContent(); 
+            return Ok("Produto Deletado"); 
         }
     }
 }

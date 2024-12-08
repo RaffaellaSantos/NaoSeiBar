@@ -7,22 +7,7 @@ namespace NSB_API.data.dtos
     {
         public string Nome { get; set; }
         [SwaggerSchema(Description = "Tipo do produto = Cerveja")]
-        public Tipo Tipo { get; set; } //Este é um enum que será um dropdown no frontend
-
-        /* Enum do Tipo
-        public enum Tipo
-        {
-            Cerveja,
-            Cachaca,
-            Vinho,
-            Vodka,
-            Gin,
-            Rum,
-            Whisky,
-            NaoAlcoolico
-        }
-        */
-
+        public Tipo Tipo { get; set; } 
         public double ValorVenda { get; set; }
         public string Marca { get; set; }
         public int Quantidade { get; set; }

@@ -1,55 +1,46 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Nao_Sei_Bar_Backend.src.data.enums;
-using Nao_Sei_Bar_Backend.src.data.repository;
-using Nao_Sei_Bar_Backend.src.services.interfaces;
-using NaoSeiBar.src.data.entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Nao_Sei_Bar_Backend.src.data;
 
 namespace Nao_Sei_Bar_Backend.src.services
 {
-    public class LoginService(IFuncionarioRepository funcionarioRepository) : ILogin
+    public class LoginService(AppDbContext context)
     {
-        private readonly IFuncionarioRepository _funcionarioRepository = funcionarioRepository;
+        private readonly AppDbContext _context = context;
 
-        public async Task<bool> ValidarLoginAsync(string cpf, string senha)
-        {
-            var funcionario = await _funcionarioRepository.obterPorCpfAsync(cpf);
-            if (funcionario == null)
+        public async Task<bool> ValidarLogin(LoginDto loginDto)
+        {            
+            var funcionario = await _context.Funcionarios.SingleOrDefaultAsync(f => f.Cpf == loginDto.Cpf);
+            if (funcionario == null) return false;
+            else
             {
-                return false;
+                var funSenha = await _context.Funcionarios.SingleOrDefaultAsync(s => s.Senha == loginDto.Senha);
+                if (funSenha == null) return false;
+                else
+                {
+                    return true;
+                }
             }
-
-            return funcionario.ValidarSenha(senha);
         }
 
-        public async Task<IFuncionario> ObterFuncionarioPorCpf(string cpf)
-        {
-            var funcionario = await _funcionarioRepository.obterPorCpfAsync(cpf);
-            return funcionario; // Retorna o funcionário encontrado
-        }
+        //public async Task CriarFuncionarioMock()
+        //{
+        //    var novoFuncionario = new Funcionario
+        //    {
+        //        Cpf = "595.107.200-03",
+        //        Nome = "Funcionário Mockado",
+        //        Senha = "mockSenha", 
+        //        Funcao = Funcao.Atendente,
+        //        Salario = 1500,
+        //        Status = true,
+        //        DataContratacao = DateTime.Now,
+        //        DataNascimento = DateTime.Now.AddYears(-25), 
+        //        CargaHorario = 40,
+        //        Telefone = "123456789"
+        //    };
 
-        public string ObterPaginaAutorizada(Funcao funcao)
-        {
-            switch (funcao)
-            {
-                case Funcao.Atendente:
-                    return "/pagina-atendente";
-            }
-            return null;
-        }
+        //    await _context.Funcionarios.AddAsync(novoFuncionario);
 
-        Task<bool> ILogin.ObterFuncionarioPorCpf(string cpf)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<bool> ILogin.ValidarLoginAsync(string cpf, string senha)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<string> ILogin.ObterPaginaAutorizada(Funcao funcao)
-        {
-            throw new NotImplementedException();
-        }
+        //    await _context.SaveChangesAsync();
+        //}
     }
 }

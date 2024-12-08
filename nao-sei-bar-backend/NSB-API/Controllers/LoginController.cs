@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Nao_Sei_Bar_Backend.src.services;
 using Nao_Sei_Bar_Backend.src.services.interfaces;
 using Nao_Sei_Bar_Backend.src.validators;
 using NaoSeiBar.src.data.entities;
@@ -10,34 +11,20 @@ namespace NSB_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LoginController(ILogin loginService, LoginValidator validator, IFuncionario funcionario) : ControllerBase
+    public class LoginController(LoginService loginService) : ControllerBase
     {
-        private readonly ILogin _loginService = loginService;
-        private readonly LoginValidator _validator = validator;
-        private readonly IFuncionario funcionario = funcionario;
+        private readonly LoginService _loginService = loginService;
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDto request)
+        public async Task<Boolean> Login([FromForm] LoginDto loginDto)
         {
 
-            FluentValidation.Results.ValidationResult result = await _validator.ValidateAsync(request);
-
-            if (!result.IsValid)
+            if (!ModelState.IsValid)
             {
-                return BadRequest(result.Errors);
+                return false;
             }
 
-            bool isValid = await _loginService.ValidarLoginAsync(request.Cpf, request.Senha);
-            if (!isValid)
-            {
-                return Unauthorized("Login ou senha inválidos.");
-            }
-
-
-            //var funcionario = await _loginService.ObterFuncionarioPorCpf(request.Cpf);
-            var paginaAutorizada = await _loginService.ObterPaginaAutorizada(funcionario.Funcao);
-
-            return Ok(new { Message = "Login bem-sucedido!", PaginaAutorizada = paginaAutorizada });
+            return await _loginService.ValidarLogin(loginDto);
         }
     }
 }

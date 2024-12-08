@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Nao_Sei_Bar_Backend.src.data;
-using Nao_Sei_Bar_Backend.src.data.repository;
 using Nao_Sei_Bar_Backend.src.services;
 using Nao_Sei_Bar_Backend.src.services.interfaces;
 using NSB_API.data.enums;
@@ -16,6 +15,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Add services to the container.
 builder.Services.AddScoped<GestorService>();
+builder.Services.AddScoped<LoginService>();
+builder.Services.AddScoped<RhService>();
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -31,8 +32,6 @@ builder.Services.AddSwaggerGen(c =>
     c.SchemaFilter<EnumSchemaFilter>();
 });
 
-builder.Services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
-builder.Services.AddScoped<ILogin, LoginService>();
 
 var app = builder.Build();
 

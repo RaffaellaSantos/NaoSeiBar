@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\NSB-API\\NSB-API.csproj": {}
+    "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\NSB-API\\NSB-API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Common\\Common.csproj": {
+    "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Common\\Common.csproj",
+        "projectUniqueName": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Common\\Common.csproj",
+        "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Common\\Common.csproj",
         "packagesPath": "C:\\Users\\adraf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Common\\obj\\",
+        "outputPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\NSB-API\\NSB-API.csproj": {
+    "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\NSB-API\\NSB-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\NSB-API\\NSB-API.csproj",
+        "projectUniqueName": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\NSB-API\\NSB-API.csproj",
         "projectName": "NSB-API",
-        "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\NSB-API\\NSB-API.csproj",
+        "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\NSB-API\\NSB-API.csproj",
         "packagesPath": "C:\\Users\\adraf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\NSB-API\\obj\\",
+        "outputPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\NSB-API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -98,11 +98,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Common\\Common.csproj"
+              "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Common\\Common.csproj"
               },
-              "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Repository\\Repository.csproj"
+              "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Repository\\Repository.csproj"
               }
             }
           }
@@ -172,14 +172,14 @@
         }
       }
     },
-    "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Repository\\Repository.csproj": {
+    "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Repository\\Repository.csproj",
+        "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\adraf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Repository\\obj\\",
+        "outputPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -201,8 +201,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\NSB-API\\Common\\Common.csproj"
+              "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\adraf\\OneDrive\\Faculdade\\Eng.Comp\\4_Período\\MPS\\NaoSeiBar\\nao-sei-bar-backend\\Common\\Common.csproj"
               }
             }
           }

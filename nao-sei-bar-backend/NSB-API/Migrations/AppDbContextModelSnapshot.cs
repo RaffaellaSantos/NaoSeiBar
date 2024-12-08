@@ -22,7 +22,7 @@ namespace NSB_API.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("NaoSeiBar.src.data.entities.Atendente", b =>
+            modelBuilder.Entity("NSB_API.data.entities.Funcionario", b =>
                 {
                     b.Property<string>("Cpf")
                         .HasColumnType("varchar(255)");
@@ -59,7 +59,7 @@ namespace NSB_API.Migrations
 
                     b.HasKey("Cpf");
 
-                    b.ToTable("Atendentes");
+                    b.ToTable("Funcionarios");
                 });
 
             modelBuilder.Entity("NaoSeiBar.src.data.entities.Cliente", b =>
@@ -120,46 +120,6 @@ namespace NSB_API.Migrations
                     b.HasIndex("produtoId");
 
                     b.ToTable("Comandas");
-                });
-
-            modelBuilder.Entity("NaoSeiBar.src.data.entities.Financeiro", b =>
-                {
-                    b.Property<string>("Cpf")
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<int>("CargaHorario")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DataContratacao")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("Funcao")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<double>("Salario")
-                        .HasColumnType("double");
-
-                    b.Property<string>("Senha")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Cpf");
-
-                    b.ToTable("Financeiros");
                 });
 
             modelBuilder.Entity("NaoSeiBar.src.data.entities.Fornecedor", b =>
@@ -228,46 +188,6 @@ namespace NSB_API.Migrations
                     b.HasIndex("FornecedorCnpj");
 
                     b.ToTable("Lotes");
-                });
-
-            modelBuilder.Entity("NaoSeiBar.src.data.entities.RH", b =>
-                {
-                    b.Property<string>("Cpf")
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<int>("CargaHorario")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DataContratacao")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("Funcao")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<double>("Salario")
-                        .HasColumnType("double");
-
-                    b.Property<string>("Senha")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Cpf");
-
-                    b.ToTable("RHs");
                 });
 
             modelBuilder.Entity("Nao_Sei_Bar_Backend.src.data.entities.Produto", b =>
@@ -347,7 +267,7 @@ namespace NSB_API.Migrations
 
             modelBuilder.Entity("Nao_Sei_Bar_Backend.src.data.entities.Produto", b =>
                 {
-                    b.HasOne("NaoSeiBar.src.data.entities.Fornecedor", "Fornecedor")
+                    b.HasOne("NaoSeiBar.src.data.entities.Fornecedor", null)
                         .WithMany("Produtos")
                         .HasForeignKey("FornecedorCnpj");
 
@@ -356,8 +276,6 @@ namespace NSB_API.Migrations
                         .HasForeignKey("LoteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Fornecedor");
 
                     b.Navigation("Lote");
                 });
