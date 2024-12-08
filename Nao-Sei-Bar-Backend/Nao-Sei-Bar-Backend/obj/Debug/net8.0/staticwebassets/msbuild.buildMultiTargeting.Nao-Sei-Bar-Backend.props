@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Nao-Sei-Bar-Backend.props" />
-</Project>

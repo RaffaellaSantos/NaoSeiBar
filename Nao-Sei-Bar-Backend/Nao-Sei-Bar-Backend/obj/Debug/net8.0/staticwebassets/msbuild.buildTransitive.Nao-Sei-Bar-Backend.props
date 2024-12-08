@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\Nao-Sei-Bar-Backend.props" />
-</Project>

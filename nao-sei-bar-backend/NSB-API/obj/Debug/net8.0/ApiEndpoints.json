@@ -1,0 +1,158 @@
+[
+  {
+    "ContainingType": "NSB_API.Controllers.GestorController",
+    "Method": "AlterarProduto",
+    "RelativePath": "api/Gestor/AlterarProduto/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "produtoDto",
+        "Type": "NSB_API.data.dtos.ProdutoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NSB_API.Controllers.GestorController",
+    "Method": "CadastrarProduto",
+    "RelativePath": "api/Gestor/CadastrarProduto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Nome",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Tipo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ValorVenda",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "Marca",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Quantidade",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Validade",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "NSB_API.data.dtos.ProdutoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "NSB_API.Controllers.GestorController",
+    "Method": "DeletarProduto",
+    "RelativePath": "api/Gestor/DeletarProduto/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NSB_API.Controllers.GestorController",
+    "Method": "ListarProduto",
+    "RelativePath": "api/Gestor/ListarProduto/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NSB_API.Controllers.GestorController",
+    "Method": "ListarProdutos",
+    "RelativePath": "api/Gestor/ListarProdutos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "filtroTipo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "NSB_API.data.dtos.PaginatedResponse\u00601[[NSB_API.data.dtos.ProdutoResponseDto, NSB-API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "NSB_API.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "api/Login/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
