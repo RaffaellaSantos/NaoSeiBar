@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Nao_Sei_Bar_Backend.src.services;
-using Nao_Sei_Bar_Backend.src.services.interfaces;
-using Nao_Sei_Bar_Backend.src.validators;
-using NaoSeiBar.src.data.entities;
-using System.ComponentModel.DataAnnotations;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

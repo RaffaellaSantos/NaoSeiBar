@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Nao_Sei_Bar_Backend.src.data;
+using Nao_Sei_Bar_Backend.src.validators;
 using NSB_API.data.dtos;
 using NSB_API.data.entities;
 
@@ -15,6 +16,17 @@ namespace NSB_API.services
             if (funcionarioDto == null)
             {
                 return new BadRequestObjectResult("Dados do funcionário não fornecidos");
+            }
+
+            if (!CpfValidator.ValidarCpf(funcionarioDto.Cpf))
+            {
+                return new BadRequestObjectResult("CPF inválido.");
+            }
+
+            var funcionarioExistente = await _context.Funcionarios.SingleOrDefaultAsync(f => f.Cpf == funcionarioDto.Cpf);
+            if (funcionarioExistente != null)
+            {
+                return new BadRequestObjectResult("CPF já cadastrado.");
             }
 
             var senha = GerarSenha();
@@ -52,6 +64,6 @@ namespace NSB_API.services
         public async Task<Funcionario> ListarFuncionarioPorCpf(string cpf)
         {
             return await _context.Funcionarios.SingleOrDefaultAsync(f => f.Cpf == cpf);
-        }
+        }        
     }
 }

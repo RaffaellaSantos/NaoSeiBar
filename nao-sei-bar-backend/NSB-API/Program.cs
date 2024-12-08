@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Nao_Sei_Bar_Backend.src.data;
 using Nao_Sei_Bar_Backend.src.services;
-using Nao_Sei_Bar_Backend.src.services.interfaces;
 using NSB_API.data.enums;
 using NSB_API.services;
 
