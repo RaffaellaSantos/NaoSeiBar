@@ -1,15 +1,15 @@
 export interface Product {
-  id: string;
-  name: string;
-  type: string;
-  quantity: number;
+  id?: string;
+  nome: string;
+  tipo: string;
+  quantidade: number;
+  valorVenda: number
+  marca: string;
+  validade: string;
 }
 
 export interface DetailedProduct extends Product {
   batch: string;
-  price: number;
   supplier: string;
-  brand: string;
-  expiration: string;
   entry: string;
 }
