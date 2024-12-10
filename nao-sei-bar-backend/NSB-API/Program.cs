@@ -13,7 +13,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowOrigins", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
         policy.AllowAnyOrigin()
               .AllowAnyMethod()
@@ -50,7 +50,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("AllowOrigins");
+app.UseCors("AllowAll");
 
 app.UseHttpsRedirection();
 
