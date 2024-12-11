@@ -1,6 +1,6 @@
 import axios from "axios";
-import { TipoBebida } from "../enums/TipoBebida";
 import { API_URL_GESTOR } from "../constants/Constants";
+import { Product } from "../interfaces/ProductInterface";
 
 export const getProducts = async () => {
   try {
@@ -10,7 +10,7 @@ export const getProducts = async () => {
         "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       },
     });
-    return response.data;
+    return response.data.items as Product[];
   } catch (err) {
     console.log(err);
   }

@@ -1,15 +1,22 @@
-export interface Product {
-  id?: number;
-  nome: string;
-  tipo: string;
-  quantidade: number;
-  valorVenda: number
-  marca: string;
-  validade: string;
+export interface RegisterProduct {
+  nome: string,
+  tipo: string,
+  valorVenda: number,
+  quantidade: number,
+  validade: string,
+  marca: string
 }
 
-export interface DetailedProduct extends Product {
-  batch: string;
-  supplier: string;
-  entry: string;
+export interface Product extends RegisterProduct {
+  id: number;
+  valorCompra: number;
+  lote: {
+    id: number;
+    dataFornecimento: string;
+    descricao: string;
+    valorTotal: number;
+    fornecedor: string | null;
+  };
+  dataEntrada: string;
 }
+
