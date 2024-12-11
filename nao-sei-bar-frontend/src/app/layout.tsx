@@ -13,6 +13,12 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const oswald = localFont({
+  src: './fonts/Oswald-VariableFont_wght.ttf',
+  variable: '--font-oswald-semibold',
+  weight: "100 900"
+})
+
 export const metadata: Metadata = {
   title: "Não Sei Bar",
   description: "Projeto para a disciplina de MPS",
@@ -24,9 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${oswald.variable} antialiased`}
       >
         {children}
       </body>
