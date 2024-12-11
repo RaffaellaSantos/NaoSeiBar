@@ -12,23 +12,21 @@ export default function Login() {
   const [cpf, setCpf] = useState("");
   const [senha, setSenha] = useState("");
   const router = useRouter();
-  const urlteste = "http://swapi.dev/api/films/1/"
+  const urlteste = "http://swapi.dev/api/films/1/";
   const handleTest = async () => {
-    const response = await axios.get(urlteste)
-    console.log(response)
-  }
+    const response = await axios.get(urlteste);
+    console.log(response);
+  };
   const handleLogin = async () => {
-  
-      const response = await axios.post(`${API_URL}/api/Login/login`, {
-        Cpf: cpf,
-        Senha: senha
-      })
-if (response) {
-  router.push('/produtos')
-} else {
-  throw new Error("falha no login" + response)
-}
-    
+    const response = await axios.post(`${API_URL}/api/Login/login`, {
+      Cpf: cpf,
+      Senha: senha,
+    });
+    if (response) {
+      router.push("/produtos");
+    } else {
+      throw new Error("falha no login" + response);
+    }
   };
   return (
     <div className="flex h-[100vh]">

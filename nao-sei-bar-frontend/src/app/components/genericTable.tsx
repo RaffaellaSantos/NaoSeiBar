@@ -25,16 +25,30 @@ type Column = {
 };
 
 type RowData = {
-  [key: string]: string | number | string[] | number[]; // Dados que podem ser numéricos ou textos
-  history: { date: string; customerId: string; amount: number }[];
+  id: number;
+  nome: string;
+  tipo: string;
+  valorCompra: number;
+  valorVenda: number;
+  marca: string;
+  quantidade: number;
+  validade: string;
+  lote: {
+    id: number;
+    dataFornecimento: string;
+    descricao: string;
+    valorTotal: number;
+    fornecedor: string | null;
+  };
+  dataEntrada: string;
 };
 
 interface CollapsibleTableProps {
   columns: Column[];
   rows: RowData[];
-  onEdit: (row: RowData) => void; // Função para editar
-  onDelete: (row: RowData) => void; 
-  onClick: () => void
+  onEdit: (row: RowData) => void;
+  onDelete: (row: RowData) => void;
+  onClick: () => void;
 }
 
 // Função para criar a linha
@@ -53,15 +67,13 @@ function Row(props: {
         {/* Colunas da tabela */}
         {columns.map((column, index) => (
           <TableCell key={index} align={column.align || "left"}>
-            {row[column.id]}
+            {column.id === "validade" ? new Date(row[column.id]).toLocaleDateString() : row[column.id]}
           </TableCell>
         ))}
 
         {/* Ícones de dropdown, editar e excluir na última célula (coluna final) */}
         <TableCell align="right">
           <Box sx={{ display: "flex", justifyContent: "flex-end", gap: 1 }}>
-            {/* Ícone de dropdown à direita */}
-
             {/* Botões de editar e excluir */}
             <IconButton
               aria-label="edit"
@@ -97,26 +109,28 @@ function Row(props: {
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
               <Typography variant="h6" gutterBottom component="div">
-                History
+                Lote Detalhado
               </Typography>
-              <Table size="small" aria-label="purchases">
+              <Table size="small" aria-label="lote details">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Date</TableCell>
-                    <TableCell>Customer</TableCell>
-                    <TableCell align="right">Amount</TableCell>
+                    <TableCell>ID do Lote</TableCell>
+                    <TableCell>Valor de Compra</TableCell>
+                    <TableCell>Fornecedor</TableCell>
+                    <TableCell>Marca</TableCell>
+                    <TableCell>Data de Validade</TableCell>
+                    <TableCell>Data de Entrada</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {row.history.map((historyRow) => (
-                    <TableRow key={historyRow.date}>
-                      <TableCell component="th" scope="row">
-                        {historyRow.date}
-                      </TableCell>
-                      <TableCell>{historyRow.customerId}</TableCell>
-                      <TableCell align="right">{historyRow.amount}</TableCell>
-                    </TableRow>
-                  ))}
+                  <TableRow>
+                    <TableCell>{row.lote.id}</TableCell>
+                    <TableCell>{row.valorCompra}</TableCell>
+                    <TableCell>{row.lote.fornecedor ?? "Não informado"}</TableCell>
+                    <TableCell>{row.marca}</TableCell>
+                    <TableCell>{new Date(row.validade).toLocaleDateString()}</TableCell>
+                    <TableCell>{new Date(row.dataEntrada).toLocaleDateString()}</TableCell>
+                  </TableRow>
                 </TableBody>
               </Table>
             </Box>
@@ -138,8 +152,8 @@ const CollapsibleTable = ({
   return (
     <TableContainer component={Paper}>
       <div className="flex justify-end gap-8 h-10 my-6 px-5">
-        <input className="w-1/4 bg-background rounded-xl"></input>
-        <button className="bg-foreground text-background rounded-xl " onClick={onClick}>
+        <input className="w-1/4 bg-background rounded-xl" />
+        <button className="bg-foreground text-background rounded-xl" onClick={onClick}>
           Cadastrar produto
         </button>
       </div>
