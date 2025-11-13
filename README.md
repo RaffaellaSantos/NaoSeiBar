@@ -1,2 +1,2 @@
 # NaoSeiBar
-Projeto pra a disciplina de MPS
+Projeto para a disciplina de MPS
