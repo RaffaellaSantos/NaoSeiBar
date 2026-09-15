@@ -3,6 +3,6 @@
 **/mysql/auto.cnf
 **/mysql/binlog.index
 **/mysql/ib_buffer_pool
-mysql
+mysql/
 [Bb]in/
 [Oo]bj/
