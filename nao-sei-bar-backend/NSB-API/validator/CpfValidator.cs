@@ -4,8 +4,13 @@
     {
         public static bool ValidarCpf(string cpf)
         {
+            if (string.IsNullOrWhiteSpace(cpf))
+            {
+                return false;
+            }
+
             // Remover caracteres não numéricos
-            cpf = cpf?.Replace(".", "").Replace("-", "");
+            cpf = cpf.Replace(".", "").Replace("-", "");
 
             // Verificar se o CPF tem 11 dígitos e se contém apenas números
             if (cpf.Length != 11 || !cpf.All(char.IsDigit))
@@ -21,13 +26,16 @@
 
             // Calcular os dois dígitos verificadores
             var soma1 = 0;
-            var soma2 = 0;
             for (int i = 0; i < 9; i++)
             {
                 soma1 += (10 - i) * (cpf[i] - '0');
-                soma2 += (11 - i) * (cpf[i] - '0');
             }
 
+            var soma2 = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                soma2 += (11 - i) * (cpf[i] - '0');
+            }
             var digito1 = (soma1 * 10) % 11;
             if (digito1 == 10) digito1 = 0;
 

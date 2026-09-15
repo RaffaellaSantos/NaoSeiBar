@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Nao_Sei_Bar_Backend.src.data;
 using Nao_Sei_Bar_Backend.src.validators;
@@ -61,8 +62,13 @@ namespace NSB_API.services
             return senha;
         }
 
-        public async Task<Funcionario> ListarFuncionarioPorCpf(string cpf)
+        public async Task<Funcionario?> ListarFuncionarioPorCpf(string cpf)
         {
+            if (string.IsNullOrWhiteSpace(cpf))
+            {
+                return null;
+            }
+            
             return await _context.Funcionarios.SingleOrDefaultAsync(f => f.Cpf == cpf);
         }        
     }

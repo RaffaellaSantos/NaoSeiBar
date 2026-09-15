@@ -20,13 +20,13 @@ namespace NSB_API.Controllers
             return await _rhService.CadastrarFuncionario(funcionarioDto);
         }
 
-        [HttpGet("ListarFuncionarioPorCpf")]
-        public async Task<IActionResult> ListarFuncionario(string cpf)
+        [HttpGet("ListarFuncionarioPorCpf/{cpf}")]
+        public async Task<IActionResult> ListarFuncionario([FromRoute] string cpf)
         {
             var funcionario = await _rhService.ListarFuncionarioPorCpf(cpf);
             if(funcionario == null)
             {
-                return BadRequest("Funcionario não encontrado");
+                return NotFound("Funcionario não encontrado");
             }
             return Ok(funcionario);
         }
