@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\NSB-API.props" />
-</Project>
